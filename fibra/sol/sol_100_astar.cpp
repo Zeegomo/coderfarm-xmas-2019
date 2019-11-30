@@ -1,0 +1,95 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <utility>
+#include <string.h>
+
+using namespace std;
+
+using ll = long long;
+
+const int MN = 100000;
+const int MINW = 0;
+const int MAXW = 100000;
+
+struct Edge{
+	int v;
+	int w;
+	bool r; //copper
+};
+
+int n,m,k,s,t;
+vector<Edge> g[MN];
+ll vis[MN];
+ll dist[MN];
+
+void djkstra(){
+	for(int i=0; i<=n; ++i)dist[i]=(ll)MAXW*(ll)MN;
+	priority_queue<pair<int,int>,vector<pair<int,int> >, greater<pair<int,int> > > q;
+	q.push({0,t});
+	dist[t]=0;
+	while(!q.empty()){
+		int p=q.top().second;
+		int d=q.top().first;
+		q.pop();
+		if(d>dist[p])continue;
+		for(auto i:g[p]){
+			if( dist[i.v]>d+i.w ){
+				dist[i.v]=d+i.w;
+				q.push({d+i.w,i.v});
+			}
+		}
+	}
+}
+
+bool feas(int m){
+	for(int i=0; i<=n; ++i)vis[i]=(ll)MAXW*(ll)MN;
+	priority_queue<pair<int,int>,vector<pair<int,int> >, greater<pair<int,int> > > q;
+	q.push({dist[s],s});
+	vis[s]=0;
+	while(!q.empty()){
+		int p=q.top().second;
+		int d=q.top().first;
+		q.pop();
+		if(p==t&&d<=k)return 1;
+		if(d>k)break;
+		d-=dist[p];
+		if(d>vis[p])continue;
+		for(auto i:g[p]){
+			if( (i.w<=m||(!i.r)) && vis[i.v]>d+i.w ){
+				vis[i.v]=d+i.w;
+				q.push({d+i.w+dist[i.v],i.v});
+			}
+		}
+	}
+	return 0;
+}
+
+int main(){
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cin>>n>>m>>k;//>>s>>t;
+	s=1;t=n;
+	int mi=0,ma=MINW;
+	for(int i=0; i<m; ++i){
+		int u,v,w;
+		bool r;
+		cin>>u>>v>>w>>r;
+		mi=min(mi,w);
+		ma=max(ma,w);
+		g[u].push_back({v,w,r});
+		g[v].push_back({u,w,r});
+	}
+	djkstra();
+	int lb=mi-1,ub=ma+1,m;
+	while(lb<ub-1){
+		m=(lb+ub)/2;
+		if(feas(m))ub=m;
+		else lb=m;
+	}
+	if(ub==ma+1)
+		cout<<-1<<endl;
+	else
+		cout<<ub<<endl;
+	return 0;
+}

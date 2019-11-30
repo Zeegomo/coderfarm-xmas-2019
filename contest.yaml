@@ -1,0 +1,121 @@
+name: "coderfarm-contest"
+description: "Coderfarm OmegaLulRip Contest 2019"
+tasks:
+  - "the"
+  - "meme"
+  - "spazzaneve"
+  - "fibra"
+  - "compleanni"
+  - "calcilate"
+  - "zainetto"
+users:
+  - username: "giackaloz"
+    password: "pizzapizza"
+    ip: null
+    hidden: true
+  - username: "filippos"
+    password: "pizzapizza"
+    ip: null
+    hidden: true
+  - username: "tommimori"
+    password: "Carlovan"
+    first_name: "Thomas"
+    last_name: "Morabito"
+    ip: null
+  - username: "alesanti"
+    password: "MyK_00L"
+    first_name: "Alex"
+    last_name: "Santini"
+    ip: null
+  - username: "lucaducci"
+    password: "fram"
+    first_name: "Luca"
+    last_name: "Amaducci"
+    ip: null
+  - username: "pietrocani"
+    password: "sugo"
+    first_name: "Pietro"
+    last_name: "Sbaraccani"
+    ip: null
+  - username: "fedeberg"
+    password: "SaucyJohn"
+    first_name: "Federico"
+    last_name: "Bergami"
+    ip: null
+  - username: "paolotti"
+    password: "SaucyJanni"
+    first_name: "Paolo"
+    last_name: "Galeotti"
+    ip: null
+  - username: "lorelore"
+    password: "300iq"
+    first_name: "Lorenzo"
+    last_name: "Loreti"
+    ip: null
+  - username: "sararini"
+    password: "Endagorion"
+    first_name: "Sara"
+    last_name: "Petrini"
+    ip: null
+  - username: "samulini"
+    password: "tourist"
+    first_name: "Samuele"
+    last_name: "Grillini"
+    ip: null
+  - username: "loriberg"
+    password: "Um_nik"
+    first_name: "Lorenzo"
+    last_name: "Bergami"
+    ip: null
+  - username: "jemerouche"
+    password: "petr"
+    first_name: "Jemel"
+    last_name: "Merouche"
+    ip: null
+  - username: "teotecchia"
+    password: "dario2994"
+    first_name: "Matteo"
+    last_name: "Cortecchia"
+    ip: null
+  - username: "fabiofer"
+    password: "rng_58"
+    first_name: "Fabio"
+    last_name: "Herhenhofher"
+    ip: null
+  - username: "laudiolodi"
+    password: "radewoosh"
+    first_name: "Claudio"
+    last_name: "Lodi"
+    ip: null
+  - username: "tommigoni"
+    password: "filippos"
+    first_name: "Tommaso"
+    last_name: "Goni"
+    ip: null
+  - username: "alebene"
+    password: "benq"
+    first_name: "Alessio"
+    last_name: "Benenati"
+    ip: null
+  - username: "samumorti"
+    password: "errichto"
+    first_name: "Samuele"
+    last_name: "Mortinaro"
+    ip: null
+  - username: "lucapercia"
+    password: "mnbvmar"
+    first_name: "Luca"
+    last_name: "Perciabosco"
+    ip: null
+  - username: "giulimonti"
+    password: "LHiC"
+    first_name: "Giulia"
+    last_name: "Monti"
+    ip: null
+  - username: "marimastro"
+    password: "GiackAloz"
+    first_name: "Marino"
+    last_name: "Mastrorocco"
+    ip: null
+
+
