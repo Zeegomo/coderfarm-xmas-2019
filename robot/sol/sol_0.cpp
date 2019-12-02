@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-int main(){
+#define int long long
+signed main(){
 	int h, a, b;
 	cin >> h >> a >> b;
 	if (a == b){
