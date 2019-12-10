@@ -46,22 +46,26 @@ struct PST {
 		return merge(query(l, r, nl, mid, n->left), query(l, r, mid, nr, n->right));
 	}
 
-	int search(int val, int nl, int nr, shared_ptr<const node> n){
-		if(n->left == nullptr || val == 0)
-			return nr;
-
+	pair<int, int> search(int val, int nl, int nr, shared_ptr<const node> n){
 		int mid = (nl+nr)/2;
 		if(n->left != nullptr && n->left->val >= val){
 			return search(val, nl, mid, n->left);
-		} else {
+		} else if(n->right != nullptr){
 			return search(val-n->left->val, mid,  nr, n->right);
+		} else{
+			return {nl, n->val};
 		}
 	}
 
 	int update(int val, int i, int s) {
-		int pos = search(i, 0, size, states[s]);
-		auto old = update(0, pos, 0, size, states[s]);
-		states.push_back(update(1, val, 0, size, old));
+		auto pos = search(i, 0, size, states[s]);
+		auto old = update(pos.second-1, pos.first, 0, size, states[s]);
+		int nnew = query(val, val+1, 0, size, old);
+		states.push_back(update(nnew+1, val, 0, size, old));
+		if(states.back()->val != states[0]->val){
+			cout <<" alla";
+			exit(1);
+		}
 		return states.size() -1;
 	}
 
@@ -97,10 +101,10 @@ int main() {
 		if(a == 1) {
 			int a, b, c;
 			cin>>a>>b>>c;
-			tree.update(c, b-1, a-1);
+			tree.update(c, b, a-1);
 		} else {
 			int a,b; cin>>a>>b;
-			e =  tree.query(0, b+1, a-1);
+			e = e ^  tree.query(0, b+1, a-1);
 			cout<<e<<'\n';
 		}
 	}

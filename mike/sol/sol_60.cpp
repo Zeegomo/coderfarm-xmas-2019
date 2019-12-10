@@ -7,6 +7,7 @@ int main() {
 	vector<int> v(n);
 	for(int &i : v)
 		cin>>i;
+	sort(v.begin(), v.end());
 	vector<vector<int>> vv;
 	vv.push_back(v);
 	int q; cin>>q;
@@ -24,7 +25,7 @@ int main() {
 		} else {
 			int a,b; cin>>a>>b;
 			auto ind = upper_bound(vv[a-1].begin(), vv[a-1].end(), b)-vv[a-1].begin();
-			e = ind;
+			e = e ^ ind;
 			cout<<e<<'\n';
 		}
 	}

@@ -19,6 +19,7 @@ int main() {
 	while(q--) {
 		int a, b, c;
 		cin>>a>>b>>c;
-		cout<<sol[c]<<"\n";
+		e = e ^ sol[c];
+		cout<<e<<"\n";
 	}
 }

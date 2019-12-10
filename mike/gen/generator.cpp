@@ -28,7 +28,19 @@ signed main(int argc, char** argv) {
 	b = stoi(argv[3]);
 	seed = stoi(argv[4]);
 	random_boy randy = random_boy(seed);
-		
+	if(n == -1){
+		cout <<"5 1 2 3 4 5 2 2 1 2 2 1 1 ";
+		return 0;
+	}
+
+	if(n == -2){
+		cout<<"5\n";
+		cout<<"1 2 3 4 5\n";
+		cout<<"2\n";
+		cout<<"1 1 1 10\n";
+		cout<<"2 1 2\n";
+		return 0;
+	}	
 	vector<int> v(n);
 	for(int i = 0; i < n; i++){
 		v[i] = randy.rand_in(1, 1e6);

@@ -1,10 +1,10 @@
 # General info
-name: mike
-title: P.A.N.T.I.E.R.I
+name: codeforces
+title: Mike Mirzayanov
 
 # Technical info
-memory_limit: 64
-time_limit: 1.0
+memory_limit: 512
+time_limit: 3
 infile: ''
 outfile: ''
 n_input: 41
