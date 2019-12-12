@@ -4,8 +4,8 @@ const int MOD = 1e9+7;
 using ll = long long;
 vector<vector<int>> nmhash(1e3, vector<int>(1e3));
 vector<vector<int>> abhash(1e3, vector<int>(1e3));
-const long long p = 7;
-const long long q = 257;
+const long long p = 31;
+const long long q = 37;
 
 ll binpow(ll a, ll b){
 	ll res = 1;
