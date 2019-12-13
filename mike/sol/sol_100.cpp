@@ -95,16 +95,24 @@ int main() {
 	PST tree(vals);
 	int q; cin>>q;
 	int e = 0;
+	int nu = 0;
 	while(q--) {
 		int a;
 		cin>>a;
 		if(a == 1) {
 			int a, b, c;
 			cin>>a>>b>>c;
+			a = ((a - e) % (nu+1) + nu+1)% (nu+1) + 1;
+			c = ((c - e) % int(1e6) + int(1e6)) % int(1e6-1) + 1;
+			cout << a << " " << b << " " << c << endl;
 			tree.update(c, b, a-1);
+			nu++;
 		} else {
 			int a,b; cin>>a>>b;
-			e = e ^  tree.query(0, b+1, a-1);
+			a = ((a - e) % (nu+1) + nu+1)% (nu+1) + 1;
+			b = ((b - e) % int(1e6) + int(1e6)) % int(1e6-1) + 1;
+			cout << a << " " << b << endl;
+			e = tree.query(0, b+1, a-1);
 			cout<<e<<'\n';
 		}
 	}

@@ -16,10 +16,13 @@ int main() {
 		sol[i] += sol[i-1];
 	}
 	int e = 0;
+	int nu = 0;
 	while(q--) {
 		int a, b, c;
 		cin>>a>>b>>c;
-		e = e ^ sol[c];
+		b = ((b - e) % (nu+1) + nu+1)% (nu+1) + 1;
+		c = ((c - e) % int(1e6) + int(1e6)) % int(1e6);
+		e = sol[c];
 		cout<<e<<"\n";
 	}
 }
