@@ -21,7 +21,6 @@ int main() {
 			cin>>a>>b>>c;
 			a = ((a - e) % (nu+1) + nu+1)% (nu+1) + 1;
 			c = ((c - e) % int(1e6) + int(1e6)) % int(1e6-1)+1;
-			cout << a << " " << b << " " << c << endl;
 			auto o = vv[a-1];
 			o[b-1] = c;
 			sort(o.begin(), o.end());
@@ -31,7 +30,6 @@ int main() {
 			int a,b; cin>>a>>b;
 			a = ((a - e) % (nu+1) + nu+1)% (nu+1) + 1;
 			b = ((b - e) % int(1e6) + int(1e6)) % int(1e6-1)+1;
-			cout << a << " " << b << endl;
 			auto ind = upper_bound(vv[a-1].begin(), vv[a-1].end(), b)-vv[a-1].begin();
 			e = ind;
 			cout<<e<<'\n';

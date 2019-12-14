@@ -21,7 +21,7 @@ int main() {
 		int a, b, c;
 		cin>>a>>b>>c;
 		b = ((b - e) % (nu+1) + nu+1)% (nu+1) + 1;
-		c = ((c - e) % int(1e6) + int(1e6)) % int(1e6);
+		c = ((c - e) % int(1e6) + int(1e6)) % int(1e6-1) + 1;
 		e = sol[c];
 		cout<<e<<"\n";
 	}

@@ -3,7 +3,7 @@ name: elisabetta
 title: Bambini cattivi 
 
 # Technical info
-memory_limit: 10
+memory_limit: 24
 time_limit: 5
 infile: ''
 outfile: ''
